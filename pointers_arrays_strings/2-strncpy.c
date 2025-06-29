@@ -13,14 +13,13 @@ char *_strncpy(char *dest, char *src, int n)
 {
 	int i;
 
-	/* Loop through n characters */
 	for (i = 0; i < n; i++)
 	{
-		if (src[i] != '\0')           /* If src has a character at this position */
-			dest[i] = src[i];         /* Copy the character from src to dest */
+		if (src[i] != '\0')
+			dest[i] = src[i];
 		else
-			dest[i] = '\0';          /* Otherwise, pad dest with '\0' */
+			dest[i] = '\0';
 	}
 
-	return (dest);                    /* Return the modified dest string */
+	return (dest);
 }
