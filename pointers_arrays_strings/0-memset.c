@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * _memset - Remplit la mémoire pointée par s avec la valeur b
- * @s: pointeur vers la zone mémoire à remplir
- * @b: valeur à copier
- * @n: nombre d'octets à remplir
+ * _memset - fills memory with a constant byte
+ * @s: pointer to the memory area to fill
+ * @b: byte to fill the memory with
+ * @n: number of bytes to fill
  *
- * Return: pointeur vers s (début de la mémoire)
+ * Return: pointer to the memory area s
  */
 
 char *_memset(char *s, char b, unsigned int n)
@@ -18,4 +18,5 @@ char *_memset(char *s, char b, unsigned int n)
 		s[i] = b;
 	}
 
+	return (s);
 }
