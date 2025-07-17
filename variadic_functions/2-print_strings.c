@@ -28,7 +28,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 		printf("%s", result);
 
-		if (n == 0)
+		if (result == NULL)
 		{
 			printf("(nil)");
 		}
