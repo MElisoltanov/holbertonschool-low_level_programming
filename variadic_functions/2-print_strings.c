@@ -25,11 +25,14 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	{
 		result = va_arg(args, char *);
 
-		printf("%s", result);
-
 		if (result == NULL)
 		{
 			printf("(nil)");
+		}
+
+		else
+		{
+			printf("%s", result);
 		}
 
 		if (i < n - 1 && separator != NULL)
