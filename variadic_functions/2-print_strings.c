@@ -28,11 +28,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 		printf("%s", result);
 
-		if (separator == NULL)
-		{
-			continue;
-		}
-
 		if (n == 0)
 		{
 			printf("(nil)");
