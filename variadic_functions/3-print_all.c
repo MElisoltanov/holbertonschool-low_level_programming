@@ -9,13 +9,17 @@ void print_f(va_list f);
 void print_s(va_list s);
 
 /**
- * print_all - Prints anything based on a format string.
- * @format: List of types of arguments passed to the function
+ * print_all - Prints any type of argument based on a format string
+ * @format: A constant string containing type specifiers
+ *
+ * Description: Supports the following format specifiers:
+ * 'c' - char, 'i' - int, 'f' - float, 's' - char *.
+ * Each argument is printed in order, separated by ", ".
+ * If a string is NULL, prints "(nil)".
  */
 
 void print_all(const char * const format, ...)
 {
-    /* Étape 1 : Déclarer les variables nécessaires (va_list, index, etc.)*/
 	va_list args;
 	unsigned int i = 0;
 	unsigned int j;
@@ -23,10 +27,8 @@ void print_all(const char * const format, ...)
 	void (*fun[])(va_list) = {print_c, print_i, print_f, print_s};
 	char *separator = "";
 
-    /* Étape 2 : Initialiser va_start avec le format*/
 	va_start(args, format);
 
-    /* Étape 3 : Parcourir chaque caractère de la chaîne 'format'*/
 	while (format != NULL && format[i] != '\0')
 	{
 		j = 0;
@@ -35,7 +37,6 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] == tab[j])
 			{
-				/* Étape 5 : Afficher la valeur correspondante*/
 				printf("%s", separator);
 				fun[j](args);
 				separator = ", ";
@@ -50,21 +51,42 @@ void print_all(const char * const format, ...)
 	printf("\n");
 }
 
-/* Étape 4 : Selon le caractère, lire le bon type d'argument avec va_arg*/
+/**
+ * print_c - Prints a character
+ * @args: The argument list containing the character to print
+ */
+
 void print_c(va_list args)
 {
 	printf("%c", va_arg(args, int));
 }
+
+/**
+ * print_i - Prints an integer
+ * @args: The argument list containing the integer to print
+ */
 
 void print_i(va_list args)
 {
 	printf("%d", va_arg(args, int));
 }
 
+/**
+ * print_f - Prints a float
+ * @args: The argument list containing the float to print
+ */
+
 void print_f(va_list args)
 {
 	printf("%f", va_arg(args, double));
 }
+
+/**
+ * print_s - Prints a string
+ * @args: The argument list containing the string to print
+ *
+ * Description: If the string is NULL, prints "(nil)".
+ */
 
 void print_s(va_list args)
 {
@@ -81,8 +103,3 @@ void print_s(va_list args)
 	printf("%s", str);
 
 }
-
-    /* Étape 6 : Gérer les séparateurs (sauf après le dernier affichage)*/
-    /* Étape 7 : Terminer va_list avec va_end*/
-    /* Étape 8 : Afficher un saut de ligne*/
-
