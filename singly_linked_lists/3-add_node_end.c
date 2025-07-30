@@ -2,6 +2,25 @@
 #include <string.h>
 #include "lists.h"
 
+#include "lists.h"
+/**
+ * _strlen - Returns the length of a string
+ * @str: Pointer to the string
+ *
+ * Return: Length of the string
+ */
+int _strlen(const char *str)
+{
+	int len = 0;
+
+	for (len = 0; str[len] != '\0'; len++)
+	{
+
+	}
+
+		return (len);
+}
+
 /**
  * add_node_end - Adds a new node at the end of a list_t list
  * @head: Double pointer to the head of the list
