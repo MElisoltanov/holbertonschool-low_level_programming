@@ -83,3 +83,21 @@ You are allowed to use strdup
 ```c
 list_t *add_node_end(list_t **head, const char *str);
 ```
+
+---
+
+## 🔹 Task 4: Free list
+
+### 🧠 Description :
+Write a function that frees a list_t list.
+
+Prototype: void free_list(list_t *head);
+
+### 📁 Files :
+- `4-free_list.c`
+- `lists.h`
+
+### 📌 Prototype :
+```c
+void free_list(list_t *head);
+```
