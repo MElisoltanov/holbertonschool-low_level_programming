@@ -73,3 +73,21 @@ Return: the address of the new element, or NULL if it failed
 ```c
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n);
 ```
+
+---
+
+## 🔹 Task 4: Free list
+
+### 🧠 Description :
+Write a function that frees a dlistint_t list.
+
+Prototype: void free_dlistint(dlistint_t *head);
+
+### 📁 Files :
+- `4-free_dlistint.c`
+- `lists.h`
+
+### 📌 Prototype :
+```c
+void free_dlistint(dlistint_t *head);
+```
