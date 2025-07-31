@@ -111,3 +111,22 @@ if the node does not exist, return NULL
 ```c
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index);
 ```
+
+---
+
+## 🔹 Task 6: Sum list
+
+### 🧠 Description :
+Write a function that returns the sum of all the data (n) of a dlistint_t linked list.
+
+Prototype: int sum_dlistint(dlistint_t *head);  
+if the list is empty, return 0
+
+### 📁 Files :
+- `6-sum_dlistint.c`
+- `lists.h`
+
+### 📌 Prototype :
+```c
+int sum_dlistint(dlistint_t *head);
+```
