@@ -2,12 +2,12 @@
 #include <stdlib.h>
 
 /**
- * insert_dnodeint_at_index - Insère un nouveau nœud à une position donnée
- * @h: Double pointeur vers le début de la liste
- * @idx: Index auquel le nouveau nœud doit être inséré (en commençant à 0)
- * @n: Valeur à stocker dans le nouveau nœud
+ * insert_dnodeint_at_index - Inserts a new node at a given position
+ * @h: Double pointer to the head of the list
+ * @idx: Index at which the new node should be added (starting from 0)
+ * @n: Value to store in the new node
  *
- * Return: Adresse du nouveau nœud, ou NULL en cas d’échec
+ * Return: Address of the new node, or NULL if it failed
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
@@ -25,7 +25,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		count++;
 		courant = courant->next;
 	}
-	 
+
 	if (courant == NULL && count == idx)
 	{
 		return (add_dnodeint_end(h, n));
